@@ -18812,20 +18812,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/admin/.nuget/packages/": {}
+    "/Users/goonja/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/admin/Documents/School/Android/BestShopFruit/BestShopFruit.csproj",
+      "projectUniqueName": "/Users/goonja/Codding_Space/MAUI/BestShopFruit/BestShopFruit.csproj",
       "projectName": "BestShopFruit",
-      "projectPath": "/Users/admin/Documents/School/Android/BestShopFruit/BestShopFruit.csproj",
-      "packagesPath": "/Users/admin/.nuget/packages/",
-      "outputPath": "/Users/admin/Documents/School/Android/BestShopFruit/obj/",
+      "projectPath": "/Users/goonja/Codding_Space/MAUI/BestShopFruit/BestShopFruit.csproj",
+      "packagesPath": "/Users/goonja/.nuget/packages/",
+      "outputPath": "/Users/goonja/Codding_Space/MAUI/BestShopFruit/obj/",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "/Users/admin/.nuget/NuGet/NuGet.Config"
+        "/Users/goonja/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0-android",
@@ -18972,7 +18972,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
       },
       "net7.0-ios16.1": {
         "targetAlias": "net7.0-ios",
@@ -19034,7 +19034,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
       },
       "net7.0-maccatalyst16.1": {
         "targetAlias": "net7.0-maccatalyst",
@@ -19097,7 +19097,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

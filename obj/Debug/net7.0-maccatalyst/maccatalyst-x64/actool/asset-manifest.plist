@@ -6,9 +6,9 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/actool/bundle/Assets.car</string>
-			<string>/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/actool/bundle/appicon.icns</string>
-			<string>/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/actool/partial-info.plist</string>
+			<string>/Users/goonja/Codding_Space/MAUI/BestShopFruit/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/actool/bundle/Assets.car</string>
+			<string>/Users/goonja/Codding_Space/MAUI/BestShopFruit/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/actool/bundle/appicon.icns</string>
+			<string>/Users/goonja/Codding_Space/MAUI/BestShopFruit/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/actool/partial-info.plist</string>
 		</array>
 	</dict>
 </dict>
