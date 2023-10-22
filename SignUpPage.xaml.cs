@@ -12,7 +12,7 @@ public partial class SignUpPage : ContentPage
 	private void SignInClicked(object sender, EventArgs e)
 {
     // Handle sign-in logic here
-	Navigation.PushAsync(new SignInPage());
+	//Navigation.PushAsync(new SignInPage());
 }
 }
 

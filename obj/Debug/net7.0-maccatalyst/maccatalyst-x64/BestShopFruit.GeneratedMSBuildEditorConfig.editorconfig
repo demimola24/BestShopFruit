@@ -8,28 +8,40 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BestShopFruit
-build_property.ProjectDir = /Users/admin/Documents/School/Android/BestShopFruit/
+build_property.ProjectDir = /Users/goonja/Codding_Space/MAUI/BestShopFruit/
 
-[/Users/admin/Documents/School/Android/BestShopFruit/App.xaml]
+[/Users/goonja/Codding_Space/MAUI/BestShopFruit/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BestShopFruit.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[/Users/admin/Documents/School/Android/BestShopFruit/AppShell.xaml]
+[/Users/goonja/Codding_Space/MAUI/BestShopFruit/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BestShopFruit.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[/Users/admin/Documents/School/Android/BestShopFruit/Resources/Styles/Colors.xaml]
+[/Users/goonja/Codding_Space/MAUI/BestShopFruit/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BestShopFruit.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/goonja/Codding_Space/MAUI/BestShopFruit/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BestShopFruit.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
 
-[/Users/admin/Documents/School/Android/BestShopFruit/Resources/Styles/Styles.xaml]
+[/Users/goonja/Codding_Space/MAUI/BestShopFruit/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = BestShopFruit.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/goonja/Codding_Space/MAUI/BestShopFruit/SignUpPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BestShopFruit.SignUpPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SignUpPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SignUpPage.xaml
