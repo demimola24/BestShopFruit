@@ -9,7 +9,7 @@
              x:DataType="local:MainPageViewModel">
 
 
-    <VerticalStackLayout>
+
         <Grid RowDefinitions=".70*,.30*"  RowSpacing="12" VerticalOptions="FillAndExpand">
 
          <VerticalStackLayout Grid.Row="0" VerticalOptions="FillAndExpand">  
@@ -31,15 +31,14 @@
          </VerticalStackLayout>
 
         <StackLayout VerticalOptions="Center"  Grid.Row="1" Spacing="10" Margin="0,24,0,0">
-            <IndicatorView x:Name="indicatorView" VerticalOptions="CenterAndExpand" IndicatorColor="Brown" IndicatorSize="12" SelectedIndicatorColor="Green"></IndicatorView>        
+            <IndicatorView x:Name="indicatorView" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IndicatorColor="Brown" IndicatorSize="12" SelectedIndicatorColor="Green"></IndicatorView>        
             <Button 
-                Text="Get Started"
-                WidthRequest="100"  
+                Text="Get Started"            
                 BackgroundColor="Transparent" 
                 Clicked="OnNextClicked"
                 HorizontalOptions="Center"  Margin="10,32,10,0">
             </Button>
         </StackLayout>
         </Grid>
-    </VerticalStackLayout>
+
 </ContentPage>
