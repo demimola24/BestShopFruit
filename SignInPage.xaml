@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BestShopFruit.SignInPage">
+    <StackLayout VerticalOptions="Center" Spacing="15" Margin="24,24,24,24">
+        <Label Text="Sign In" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+         <BoxView HeightRequest="30" Opacity="0.0" />
+        <Entry Placeholder="Email" HeightRequest="50"></Entry>
+        <Entry Placeholder="Password" HeightRequest="50" IsPassword="True" />
+         <BoxView HeightRequest="30" Opacity="0.0" />
+        <Button Text="Sign In"  HeightRequest="50" CornerRadius="30" />
+         <BoxView HeightRequest="50" Opacity="0.0" />
+         <Button Text="New User? Sign Up Here"  HeightRequest="50"  BackgroundColor="Transparent" Clicked="SignUpClicked" />        
+        <BoxView HeightRequest="10" Opacity="0.0" />
+    </StackLayout>
+</ContentPage>
