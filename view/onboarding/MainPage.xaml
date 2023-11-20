@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BestShopFruit.MainPage"
+             NavigationPage.HasNavigationBar="false" 
+             BackgroundColor="White"
+             Title=""
+             xmlns:local="clr-namespace:BestShopFruit"
+             x:DataType="local:MainPageViewModel">
+
+
+
+        <Grid RowDefinitions=".70*,.30*"  RowSpacing="12" VerticalOptions="FillAndExpand">
+
+         <VerticalStackLayout Grid.Row="0" VerticalOptions="FillAndExpand">  
+
+         <CarouselView ItemsSource="{Binding CarouselItems}" IndicatorView="indicatorView" Loop="True">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="local:CarouselItem">
+                      <VerticalStackLayout VerticalOptions="FillAndExpand">  
+                            <Image Source="{Binding Image}"  Grid.Row="0" WidthRequest="350" HeightRequest="350" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"></Image>
+                            <StackLayout VerticalOptions="Center"  Grid.Row="1" Spacing="10" Margin="12,24,12,12">
+                                <Label Text="{Binding Title}" FontSize="Title" HorizontalOptions="Center"></Label>
+                                <Label Text="{Binding Description}" FontSize="Default" HorizontalOptions="Center"></Label>
+                            </StackLayout>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+         </VerticalStackLayout>
+
+        <StackLayout VerticalOptions="Center"  Grid.Row="1" Spacing="10" Margin="0,24,0,0">
+            <IndicatorView x:Name="indicatorView" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IndicatorColor="Brown" IndicatorSize="12" SelectedIndicatorColor="Green"></IndicatorView>        
+            <Button 
+                Text="Get Started"            
+                BackgroundColor="Transparent" 
+                Clicked="OnNextClicked"
+                HorizontalOptions="Center"  Margin="10,32,10,0">
+            </Button>
+        </StackLayout>
+        </Grid>
+
+</ContentPage>

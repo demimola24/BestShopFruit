@@ -28,6 +28,7 @@ com.google.android.material.appbar.AppBarLayout;/Users/admin/Documents/School/An
 com.google.android.material.appbar.AppBarLayout;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/8/jl/res/layout/navigationlayout.xml
 com.google.android.material.appbar.MaterialToolbar;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/6/jl/res/layout/toolbar.xml
 com.google.android.material.tabs.TabLayout;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/6/jl/res/layout/tabbar.xml
+crc640ec207abc449b2ca.ShellFlyoutLayout;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/5/jl/res/layout/flyoutcontent.xml
 declare-styleable;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/6/jl/res/values/attrs.xml
 declare-styleable;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/8/jl/res/values/attr.xml
 external-cache-path;/Users/admin/Documents/School/Android/BestShopFruit/obj/Debug/net7.0-android/lp/9/jl/res/xml/microsoft_maui_essentials_fileprovider_file_paths.xml
