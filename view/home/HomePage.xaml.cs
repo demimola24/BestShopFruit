@@ -1,16 +1,20 @@
-﻿namespace BestShopFruit;
+﻿using System.Diagnostics;
 
-public partial class HomePage : ContentPage
+namespace BestShopFruit.View.Home;
+
+public partial class HomePage : Shell
 {
 
-	 private readonly HttpClient _httpClient;
+     public static HomePageViewModel homePageViewModel;
 
-
-	public HomePage(HomePageViewModel homePageViewModel)
-        {
-            InitializeComponent();
-            BindingContext = homePageViewModel;
-        }
-
+    public HomePage()
+    {
+        InitializeComponent();
+        homePageViewModel = Application.Current.Handler.MauiContext.Services.GetService<HomePageViewModel>();
+        BindingContext = homePageViewModel;
+        Routing.RegisterRoute(nameof(ProductDetailsPage), typeof(ProductDetailsPage));
+        Routing.RegisterRoute(nameof(OrderSuccessPage), typeof(OrderSuccessPage));
+        
+    }
 }
 
