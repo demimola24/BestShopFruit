@@ -1,0 +1,93 @@
+<ContentPage
+    x:Class="BestShopFruit.View.Home.OrderSuccessPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+    xmlns:local="clr-namespace:BestShopFruit.View.Home"        
+    x:DataType="local:HomePageViewModel"
+    BackgroundColor="#D3D3D3"
+    Shell.NavBarIsVisible="False">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1" Margin="0,-1,0,0">
+            <VerticalStackLayout Padding="0">
+                <Grid
+                    x:Name="ProductNavigation"
+                    Padding="5,10"
+                    BackgroundColor="White"
+                    ColumnDefinitions="48,*,48"
+                    ColumnSpacing="10">
+
+                    <!--  back button  -->
+                    <ImageButton
+                        Grid.Column="0"
+                        BackgroundColor="Transparent"
+                        CornerRadius="20"
+                        HeightRequest="25"
+                        Source="arrow_back.svg"
+                        WidthRequest="25">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type local:HomePageViewModel}}, Path=GoBackCommand}" />
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+
+                    <HorizontalStackLayout Grid.Column="1" />
+                
+                </Grid>
+                <Frame
+                    Margin="0,-1,0,0"
+                    Padding="0,40,0,15"
+                    BackgroundColor="White"
+                    BorderColor="Transparent"
+                    CornerRadius="0"
+                    HasShadow="False"
+                    ZIndex="2">
+                    <Image
+                        Margin="0"
+                        Aspect="AspectFit"
+                        HeightRequest="300"
+                        Source="success.png" />
+                </Frame>
+
+                <Frame
+                    Margin="0,-70,0,0"
+                    Padding="60"
+                    BackgroundColor="White"
+                    BorderColor="Beige"
+                    CornerRadius="60"
+                    HasShadow="False"
+                    ZIndex="1" />
+
+                <VerticalStackLayout Padding="0,30" VerticalOptions="Center">
+                    <!--  available label  -->
+                    <Label
+                        Padding="20,0"
+                        FontAttributes="Bold"                    
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        Text="Order Placed Successfully!"
+                        TextColor="Green"
+                        VerticalTextAlignment="Center" />
+
+                     <BoxView HeightRequest="20" Opacity="0.0" />
+
+                     <Button Text="Okay"  HeightRequest="50" CornerRadius="30"  Command="{Binding Source={RelativeSource AncestorType={x:Type local:HomePageViewModel}}, Path=GoBackCommand}"/>
+                        
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        <!--  loading indicator  -->
+        <ActivityIndicator
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="CenterAndExpand" />
+    </Grid>
+</ContentPage>
