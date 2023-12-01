@@ -1,40 +1,90 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using BestShopFruit.Models;
+using BestShopFruit.Services;
+using System.Windows.Input;
+using BestShopFruit.View.Home;
 
-namespace BestShopFruit
+namespace BestShopFruit.View.Onboarding
 {
-    public partial class SignInPageViewModel : ObservableObject
+    public partial class SignInPageViewModel : BaseViewModel
     {
-         private readonly HttpClient _httpClient;
-         public ObservableCollection<Boolean> loginStatus { get; set; } = new();
+        private readonly AppService _authService;
+         public ICommand LoginCommand { get; set; }
 
-          public SignInPageViewModel(){         
-            _httpClient = new HttpClient();
-         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignInPageViewModel"/> class.
+        /// </summary>
+        /// <param name="authService">The authentication service.</param>
+        public SignInPageViewModel(AppService authService)
+        {
+            _authService = authService;
+             LoginCommand = new Command(async () => await Login(username, password));
+        }
 
-         public async Task RefreshDataAsync(String username, String password){    
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignInPageViewModel"/> class. This empty constructor is used for design-time data.
+        /// </summary>
+        public SignInPageViewModel(){}
 
-            Uri uri = new Uri(string.Format("https://fruitappwp.azurewebsites.net/api/users/login", string.Empty));
+        /// <summary>
+        /// Gets or sets the username.
+        /// </summary>
+        [ObservableProperty]
+        string username;
+
+        /// <summary>
+        /// Gets or sets the password.
+        /// </summary>
+        [ObservableProperty]
+        string password;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the password is visible.
+        /// </summary>
+        [ObservableProperty]
+        bool isPasswordVisible;
+
+        private AuthResponse response = new AuthResponse();
+
+    
+        public async Task Login(string Username, string Password)
+        {
+            Debug.WriteLine("Login Called.");
+            
+            if (IsBusy)
+                return;
+
             try
             {
-                HttpResponseMessage response = await _httpClient.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
-                {
-                    loginStatus.Add(true);
-                    
-                }
+                IsBusy = true;
+                response = await _authService.LoginAsync(Username, Password);
+
+                App.Current.MainPage = new HomePage();
+                //await App.Current.MainPage.Navigation.PushAsync(new HomePage());
+
+                //await Shell.Current.GoToAsync($"{nameof(HomePage)}");	
             }
             catch (Exception ex)
             {
-                loginStatus.Add(false);            
+                Debug.WriteLine($"Login Error. {ex}");
+                 await Application.Current.MainPage.DisplayAlert("Error!", "You have entered invalid credentials", "OK");                
             }
-    
-      }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        /// <summary>
+        /// Toggles the password visibility.
+        /// </summary>
+        [RelayCommand]
+        public void TogglePasswordVisibility()
+        {
+            this.IsPasswordVisible = !this.IsPasswordVisible;
+        }
 
     }
     

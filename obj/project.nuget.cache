@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dOHvamuzz37zTvXsNe6YgAV0tXs1S2//rzvveEWHd55rOhxTB74jYbMCCSwmjZKOel2sh03NN1d72HezZiaD1w==",
+  "dgSpecHash": "Lunh4UnwmRqs6GGn1EnAhn6G9Ah3iF4q4vAoCNmrE59CSMjPVbgLvl/b0d5virZ+YRs9s+pfSQSsnbxLhtuZYA==",
   "success": true,
   "projectFilePath": "/Users/admin/Documents/School/Android/BestShopFruit/BestShopFruit.csproj",
   "expectedPackageFiles": [
+    "/Users/admin/.nuget/packages/communitytoolkit.maui/6.0.0/communitytoolkit.maui.6.0.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/communitytoolkit.maui.core/6.0.0/communitytoolkit.maui.core.6.0.0.nupkg.sha512",
     "/Users/admin/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
     "/Users/admin/.nuget/packages/googlegson/2.9.1.1/googlegson.2.9.1.1.nupkg.sha512",
     "/Users/admin/.nuget/packages/microsoft.extensions.configuration/7.0.0/microsoft.extensions.configuration.7.0.0.nupkg.sha512",

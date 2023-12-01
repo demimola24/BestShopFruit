@@ -1,4 +1,4 @@
-﻿namespace BestShopFruit;
+﻿namespace BestShopFruit.View.Onboarding;
 
 public partial class MainPage : ContentPage
 {
@@ -8,10 +8,17 @@ public partial class MainPage : ContentPage
             BindingContext = mainPageViewModel;
         }
 
+
+/* Unmerged change from project 'BestShopFruit (net7.0-ios)'
+Before:
 	private void OnNextClicked(object sender, EventArgs e)
+After:
+	private async Task OnNextClickedAsync(object sender, EventArgs e)
+*/
+	private async void OnNextClicked(object sender, EventArgs e)
 	{
-		
-		Navigation.PushAsync(new SignInPage());
+		await Shell.Current.GoToAsync($"{nameof(SignInPage)}");
+		//Navigation.PushAsync(new SignInPage());
 
 		//SemanticScreenReader.Announce(CounterBtn.Text);
 	}

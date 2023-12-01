@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BestShopFruit.SignInPage">
-    <StackLayout VerticalOptions="Center" Spacing="15" Margin="24,24,24,24">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="BestShopFruit.View.Onboarding.SignInPage"
+             xmlns:model="clr-namespace:BestShopFruit.Models"
+             xmlns:modelroot="clr-namespace:BestShopFruit.Models"
+             NavigationPage.HasNavigationBar="false" 
+             BackgroundColor="White"
+             Title=""
+             xmlns:local="clr-namespace:BestShopFruit.View.Onboarding"
+             x:DataType="local:SignInPageViewModel">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+             
+    <StackLayout Grid.Row="0" VerticalOptions="Center" Spacing="15" Margin="24,24,24,24">
         <Label Text="Sign In" FontSize="Title" HorizontalOptions="Center" FontAttributes="Bold"></Label>
          <BoxView HeightRequest="30" Opacity="0.0" />
-        <Entry Placeholder="Email" HeightRequest="50"></Entry>
-        <Entry Placeholder="Password" HeightRequest="50" IsPassword="True" />
+        <Entry Placeholder="Email" HeightRequest="50" Text="{Binding Username}" ></Entry>
+        <Entry Placeholder="Password" HeightRequest="50" IsPassword="True" Text="{Binding Password}" />
          <BoxView HeightRequest="30" Opacity="0.0" />
-        <Button Text="Sign In"  HeightRequest="50" CornerRadius="30" />
+        <Button Text="Sign In"  HeightRequest="50" CornerRadius="30"  Command="{Binding LoginCommand}"/>
          <BoxView HeightRequest="50" Opacity="0.0" />
-         <Button Text="New User? Sign Up Here"  HeightRequest="50"  BackgroundColor="Transparent" Clicked="SignUpClicked" />        
+         <Button Text="New User? Sign Up Here"  HeightRequest="50"  BackgroundColor="Transparent"  Clicked="SignUpClicked" />        
         <BoxView HeightRequest="10" Opacity="0.0" />
     </StackLayout>
+
+     <!--  Loading Indicator  -->
+        <ActivityIndicator
+            Grid.RowSpan="2"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="CenterAndExpand" />
+
+    </Grid>
 </ContentPage>

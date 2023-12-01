@@ -4,5 +4,464 @@
         <name>BestShopFruit</name>
     </assembly>
     <members>
+        <member name="T:BestShopFruit.Models.AuthResponse">
+            <summary>
+            Represents the response from a login attempt, including an authentication token and user ID.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.Models.AuthResponse.Message">
+            <summary>
+            Gets or sets the message .
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.Models.FruitModel.quantity">
+            <summary>
+            Gets or sets the quantity of the product in the cart item.
+            </summary>
+        </member>
+        <member name="T:BestShopFruit.Models.LoginRequest">
+            <summary>
+            Represents a request for user login with username and password.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.Models.LoginRequest.Username">
+            <summary>
+            Gets or sets the username for login.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.Models.LoginRequest.Password">
+            <summary>
+            Gets or sets the password for login.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.Models.OrderModel.quantity">
+            <summary>
+            Gets or sets the quantity of the product in the cart item.
+            </summary>
+        </member>
+        <member name="T:BestShopFruit.Services.AppService">
+            <summary>
+            This class is responsible for authenticating the user and storing the token and userId in secure storage.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.Services.AppService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.Services.AppService"/> class.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.Services.AppService.RegisterAsync(System.String,System.String)">
+            <summary>
+            Register the user.    
+            </summary>
+            <param name="username">The username of the user.</param>
+            <param name="password">The password of the user.</param>
+            <returns>A task of type <see cref="T:BestShopFruit.Models.AuthResponse"/>.</returns>
+        </member>
+        <member name="M:BestShopFruit.Services.AppService.LoginAsync(System.String,System.String)">
+            <summary>
+            Logs the user in.
+            </summary>
+            <param name="username">The username of the user.</param>
+            <param name="password">The password of the user.</param>
+            <returns>A task of type <see cref="T:BestShopFruit.Models.AuthResponse"/>.</returns>
+        </member>
+        <member name="T:BestShopFruit.Services.BaseService">
+            <summary>
+            This class provides base functionality for other service classes.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.Services.BaseService._httpClient">
+            <summary>
+            An instance of <see cref="T:System.Net.Http.HttpClient"/>.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.Services.BaseService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.Services.BaseService"/> class.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.Services.BaseService.GetAsync``1(System.String)">
+            <summary>
+            Sends a GET request to the specified endpoint and returns the response as an instance of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the response object.</typeparam>
+            <param name="endpoint">The endpoint to send the GET request to.</param>
+            <returns>A task of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:BestShopFruit.Services.BaseService.DeleteAsync(System.String)">
+            <summary>
+            Sends a DELETE request to the specified endpoint and returns the response.
+            </summary>
+            <param name="endpoint">The endpoint to send the DELETE request to.</param>
+            <returns>A task of type <see cref="T:System.Net.Http.HttpResponseMessage"/>.</returns>
+        </member>
+        <member name="M:BestShopFruit.Services.BaseService.IsInternetAvailable">
+            <summary>
+            Checks if an internet connection is available.
+            </summary>
+            <returns><c>true</c> if an internet connection is available; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:BestShopFruit.View.BaseViewModel">
+            <summary>
+            Provides a base implementation for view models.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:BestShopFruit.View.BaseViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.View.BaseViewModel"/> class.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.View.BaseViewModel.IsBusy">
+            <summary>
+            Gets or sets a value indicating whether the view model is busy performing an operation.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.BaseViewModel.title">
+            <summary>
+            Gets or sets the title of the page.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.View.BaseViewModel.GoBack">
+            <summary>
+            Navigates back to the previous page in the navigation stack.
+            </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:BestShopFruit.View.BaseViewModel.GoToRoute(System.String)">
+            <summary>
+            Navigates to the specified page using shell navigation.
+            </summary>
+            <param name="pageName">The name of the page to navigate to.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="P:BestShopFruit.View.BaseViewModel.IsBusyWithCartModification">
+            <inheritdoc cref="F:BestShopFruit.View.BaseViewModel.isBusyWithCartModification"/>
+        </member>
+        <member name="P:BestShopFruit.View.BaseViewModel.Title">
+            <inheritdoc cref="F:BestShopFruit.View.BaseViewModel.title"/>
+        </member>
+        <member name="F:BestShopFruit.View.BaseViewModel.goBackCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.BaseViewModel.GoBackCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.BaseViewModel.GoBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:BestShopFruit.View.BaseViewModel.GoBack"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.BaseViewModel.goToRouteCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.BaseViewModel.GoToRouteCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.BaseViewModel.GoToRouteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:BestShopFruit.View.BaseViewModel.GoToRoute(System.String)"/>.</summary>
+        </member>
+        <member name="T:BestShopFruit.View.Home.HomePageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:BestShopFruit.View.Home.HomePageViewModel.#ctor(BestShopFruit.Services.AppService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.View.Home.HomePageViewModel"/> class.
+            </summary>
+            <param name="appService">The authentication service.</param>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.Product">
+            <inheritdoc cref="F:BestShopFruit.View.Home.HomePageViewModel.product"/>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.productTappedCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.ProductTappedCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.ProductTappedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.ProductTapped(BestShopFruit.Models.FruitModel)"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.initCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.InitCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.Init"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.addToCartCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.AddToCartCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.AddToCartCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.AddToCart(BestShopFruit.Models.FruitModel)"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.deleteCartCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.DeleteCartCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.DeleteCartCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.DeleteCart"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.increaseProductQuantityCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.IncreaseProductQuantityCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.IncreaseProductQuantityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.IncreaseProductQuantity(BestShopFruit.Models.FruitModel)"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.decreaseProductQuantityCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.DecreaseProductQuantityCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.DecreaseProductQuantityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.DecreaseProductQuantity(BestShopFruit.Models.FruitModel)"/>.</summary>
+        </member>
+        <member name="F:BestShopFruit.View.Home.HomePageViewModel.completeOrderCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Home.HomePageViewModel.CompleteOrderCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Home.HomePageViewModel.CompleteOrderCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:BestShopFruit.View.Home.HomePageViewModel.CompleteOrder"/>.</summary>
+        </member>
+        <member name="T:BestShopFruit.View.Onboarding.SignInPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:BestShopFruit.View.Onboarding.SignInPageViewModel.#ctor(BestShopFruit.Services.AppService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.View.Onboarding.SignInPageViewModel"/> class.
+            </summary>
+            <param name="authService">The authentication service.</param>
+        </member>
+        <member name="M:BestShopFruit.View.Onboarding.SignInPageViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.View.Onboarding.SignInPageViewModel"/> class. This empty constructor is used for design-time data.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignInPageViewModel.username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignInPageViewModel.password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignInPageViewModel.isPasswordVisible">
+            <summary>
+            Gets or sets a value indicating whether the password is visible.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.View.Onboarding.SignInPageViewModel.TogglePasswordVisibility">
+            <summary>
+            Toggles the password visibility.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignInPageViewModel.Username">
+            <inheritdoc cref="F:BestShopFruit.View.Onboarding.SignInPageViewModel.username"/>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignInPageViewModel.Password">
+            <inheritdoc cref="F:BestShopFruit.View.Onboarding.SignInPageViewModel.password"/>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignInPageViewModel.IsPasswordVisible">
+            <inheritdoc cref="F:BestShopFruit.View.Onboarding.SignInPageViewModel.isPasswordVisible"/>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignInPageViewModel.togglePasswordVisibilityCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Onboarding.SignInPageViewModel.TogglePasswordVisibilityCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignInPageViewModel.TogglePasswordVisibilityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BestShopFruit.View.Onboarding.SignInPageViewModel.TogglePasswordVisibility"/>.</summary>
+        </member>
+        <member name="T:BestShopFruit.View.Onboarding.SignUpPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:BestShopFruit.View.Onboarding.SignUpPageViewModel.#ctor(BestShopFruit.Services.AppService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.View.Onboarding.SignUpPageViewModel"/> class.
+            </summary>
+            <param name="authService">The authentication service.</param>
+        </member>
+        <member name="M:BestShopFruit.View.Onboarding.SignUpPageViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BestShopFruit.View.Onboarding.SignUpPageViewModel"/> class. This empty constructor is used for design-time data.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.isPasswordVisible">
+            <summary>
+            Gets or sets a value indicating whether the password is visible.
+            </summary>
+        </member>
+        <member name="M:BestShopFruit.View.Onboarding.SignUpPageViewModel.TogglePasswordVisibility">
+            <summary>
+            Toggles the password visibility.
+            </summary>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignUpPageViewModel.Username">
+            <inheritdoc cref="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.username"/>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignUpPageViewModel.Password">
+            <inheritdoc cref="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.password"/>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignUpPageViewModel.IsPasswordVisible">
+            <inheritdoc cref="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.isPasswordVisible"/>
+        </member>
+        <member name="F:BestShopFruit.View.Onboarding.SignUpPageViewModel.togglePasswordVisibilityCommand">
+            <summary>The backing field for <see cref="P:BestShopFruit.View.Onboarding.SignUpPageViewModel.TogglePasswordVisibilityCommand"/>.</summary>
+        </member>
+        <member name="P:BestShopFruit.View.Onboarding.SignUpPageViewModel.TogglePasswordVisibilityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BestShopFruit.View.Onboarding.SignUpPageViewModel.TogglePasswordVisibility"/>.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusyWithCartModification">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusyWithCartModification" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Product">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Product" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Username">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Username" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsPasswordVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsPasswordVisible" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusyWithCartModification">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusyWithCartModification" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Product">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Product" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Username">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Username" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsPasswordVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsPasswordVisible" generated properties.</summary>
+        </member>
     </members>
 </doc>

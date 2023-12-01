@@ -1,18 +1,18 @@
-﻿namespace BestShopFruit;
+﻿namespace BestShopFruit.View.Onboarding;
 
 public partial class SignUpPage : ContentPage
 {
-
-
-	public SignUpPage()
+	public SignUpPage(SignUpPageViewModel viewModel)
 	{
 		InitializeComponent();
+		BindingContext = viewModel;
 	}
 
-	private void SignInClicked(object sender, EventArgs e)
+	private async void SignInClicked(object sender, EventArgs e)
 {
     // Handle sign-in logic here
-	Navigation.PushAsync(new SignInPage());
-}
+	await Shell.Current.GoToAsync($"{nameof(SignInPage)}");	
+ }
+
 }
 

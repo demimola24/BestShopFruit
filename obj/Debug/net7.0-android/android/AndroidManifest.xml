@@ -31,8 +31,8 @@
     <uses-library android:name="androidx.window.extensions" android:required="false" />
     <uses-library android:name="androidx.window.sidecar" android:required="false" />
     <provider android:name="androidx.startup.InitializationProvider" android:authorities="com.companyname.bestshopfruit.androidx-startup" android:exported="false" tools:node="merge">
-      <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
       <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup" />
+      <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
     </provider>
   </application>
 </manifest>

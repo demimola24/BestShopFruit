@@ -1,4 +1,4 @@
-namespace BestShopFruit.View.Home;
+﻿namespace BestShopFruit.View.Home;
 
 public partial class OrderedPage : ContentPage
 {

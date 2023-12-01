@@ -4,7 +4,7 @@ public partial class ProductsPage : ContentPage
 {
 	public ProductsPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             BindingContext = HomePage.homePageViewModel;      
         }
 
