@@ -78,8 +78,13 @@ namespace BestShopFruit.View.Home
 
             try
             {
-               CartItems.Add(product);
-               await Shell.Current.DisplayAlert("Added", "Item has been added to cart:", "Ok");
+                if(!CartItems.Contains(product)){
+                   product.quantity =1;
+                   CartItems.Add(product);
+                   await Shell.Current.DisplayAlert("Added", "Item added to cart", "Ok");
+                 }else{
+                    await Shell.Current.DisplayAlert("Duplicate", "Item has already been added to cart:", "Ok");
+                 }                                    
             }
             catch (Exception ex)
             {
@@ -153,13 +158,10 @@ namespace BestShopFruit.View.Home
             try
             {
                 var found = CartItems.Single(x=>x.id == product.id); 
-                Debug.WriteLine($"found: {found} with quantity {found.quantity}");
-                Debug.WriteLine($"Size: {CartItems.Count}");           
-                CartItems.Remove(product);
-                Debug.WriteLine($"Size After: {CartItems.Count}");
-                found.quantity = found.quantity+ 1;            
-                Debug.WriteLine($"Addeding : {found} with quantity {found.quantity}");
-                CartItems.Add(found);
+                var index = CartItems.IndexOf(found);                  
+                CartItems.Remove(product);                
+                found.quantity = found.quantity+ 1;                                            
+                CartItems.Insert(index,found);
                 
             }
             catch (Exception ex)
@@ -175,10 +177,13 @@ namespace BestShopFruit.View.Home
         {
             try
             {
-                var found = CartItems.Single(x=>x.id == product.id);            
+                if(product.quantity<1){ return;}
+                
+                var found = CartItems.Single(x=>x.id == product.id);   
+                var index = CartItems.IndexOf(found);         
                 CartItems.Remove(product);
                 found.quantity = found.quantity- 1;            
-                CartItems.Add(found);
+                CartItems.Insert(index,found);
             }
             catch (Exception ex)
             {
@@ -195,7 +200,7 @@ namespace BestShopFruit.View.Home
                 await Shell.Current.GoToAsync($"{nameof(OrderSuccessPage)}");  
                 var order = new OrderModel();            
                 order.id = $"Order-MBSF-{OrderItems.Count+1}";
-                order.quantity = $"{CartItems.Count+1} Items";
+                order.quantity = $"{CartItems.Count} Items";
                 OrderItems.Add(order);
                 CartItems.Clear();                          
             }

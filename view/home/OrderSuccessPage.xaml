@@ -62,7 +62,7 @@
                     HasShadow="False"
                     ZIndex="1" />
 
-                <VerticalStackLayout Padding="0,30" VerticalOptions="Center">
+                <VerticalStackLayout Padding="30,30" VerticalOptions="Center">
                     <!--  available label  -->
                     <Label
                         Padding="20,0"
